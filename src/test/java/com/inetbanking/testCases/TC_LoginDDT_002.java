@@ -12,11 +12,12 @@ import com.inetbanking.utilities.XLUtils;
 
 public class TC_LoginDDT_002 extends BaseClass {
 	LoginPage lp;
+
 	@Test(dataProvider = "LoginData")
 	public void loginDDt(String user, String pwd) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		lp = new LoginPage(driver);
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		lp.setUserName(user);
 		logger.info("user name provided");
 		lp.setPassword(pwd);
@@ -29,10 +30,8 @@ public class TC_LoginDDT_002 extends BaseClass {
 			driver.switchTo().alert().accept();
 			driver.switchTo().defaultContent();
 			Assert.assertTrue(false);
-			logger.warn("Login Failed");
 		} else {
 			Assert.assertTrue(true);
-			logger.info("Login Passed");
 			lp.clickLogout();
 			Thread.sleep(2000);
 			driver.switchTo().alert().accept();
@@ -49,6 +48,10 @@ public class TC_LoginDDT_002 extends BaseClass {
 		}
 	}
 
+	/*
+	 * this method reading data from excel sheet and providing data to loginDDT
+	 * method in this class to try to login multiple times.
+	 */
 	@DataProvider(name = "LoginData")
 	String[][] getData() throws IOException {
 		String path = System.getProperty("user.dir") + "/src/test/java/com/inetbanking/testData/LoginData.xlsx";

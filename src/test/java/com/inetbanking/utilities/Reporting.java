@@ -25,6 +25,8 @@ public class Reporting extends TestListenerAdapter {
 	public ExtentReports extent;
 	public ExtentTest logger;
 	
+	//This class is used to generate the reports containing information that how many tests are passed and failed.
+	
 	public void onStart(ITestContext testContext) {
 		
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()); //time stamp

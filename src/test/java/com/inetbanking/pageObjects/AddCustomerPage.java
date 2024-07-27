@@ -14,6 +14,7 @@ public class AddCustomerPage {
 		ldriver = rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
+	// here I locating all the web-elements
 	
 	@FindBy(xpath = "//a[normalize-space()='New Customer']")
 	@CacheLookup
@@ -64,7 +65,7 @@ public class AddCustomerPage {
 	@CacheLookup
 	WebElement cusSubmit;
 	
-	
+	//I calling these methods from TC_AddCustomerTest_003.java class by creating the object of this class "AddCustomerPage".
 	public void clickAddCus() {
 		addcustomer.click();
 	}

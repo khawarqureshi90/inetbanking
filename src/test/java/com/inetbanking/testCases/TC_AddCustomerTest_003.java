@@ -11,6 +11,7 @@ public class TC_AddCustomerTest_003 extends BaseClass {
 	LoginPage lp;
 	AddCustomerPage acp;
 
+	//adding informations to save in the system.
 	@Test
 	public void addNewCustomer() throws InterruptedException, IOException {
 		lp = new LoginPage(driver);
@@ -24,7 +25,7 @@ public class TC_AddCustomerTest_003 extends BaseClass {
 		acp.clickAddCus();
 
 		acp.name("tomy");
-		acp.gender("female");
+		acp.gender("male");
 		acp.dob("13", "02", "1990");
 		Thread.sleep(2000);
 		acp.address("420 Beauchamp avenue");
@@ -41,9 +42,9 @@ public class TC_AddCustomerTest_003 extends BaseClass {
 		
 		logger.info("validation start");
 		
-		Boolean done = driver.getPageSource().contains("Customer Registered Successfully!!!");
+		Boolean successfullyentered = driver.getPageSource().contains("Customer Registered Successfully!!!");
 		
-		if(done) {
+		if(successfullyentered) {
 			Assert.assertTrue(true);
 			captureScreen(driver, "AddCustomer");
 			logger.info("test passed");

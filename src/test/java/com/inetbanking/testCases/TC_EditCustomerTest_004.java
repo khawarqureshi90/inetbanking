@@ -15,6 +15,11 @@ public class TC_EditCustomerTest_004 extends BaseClass {
 
 	@Test
 	public void editCustomer() throws InterruptedException {
+		
+		/*
+		 * Creating object of LoginPage class and EditCustomerPage class to call the methods which are used to
+		 * enter the information and modify record successfully.
+		 */
 		lp = new LoginPage(driver);
 		ep = new EditCustomerPage(driver);
 
@@ -30,6 +35,7 @@ public class TC_EditCustomerTest_004 extends BaseClass {
 		Thread.sleep(1000);
 		ep.subChange();
 		if(isAlertshown()) {
+			//if alert shown then accept it so we can edit successfully 
 			Thread.sleep(2000);
 			driver.switchTo().alert().accept();
 			driver.switchTo().defaultContent();
@@ -43,11 +49,11 @@ public class TC_EditCustomerTest_004 extends BaseClass {
 		}
 		
 
-		ep.addID("52608");
-		ep.submitEdit();
+//		ep.addID("52608");
+//		ep.submitEdit();
 
 	}
-	
+	// this method will check if alert shown or not
 	public boolean isAlertshown() {
 		try {
 			driver.switchTo().alert();

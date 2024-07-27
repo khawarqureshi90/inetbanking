@@ -14,6 +14,8 @@ public class EditCustomerPage {
 		PageFactory.initElements(rdriver, this);
 	}
 	
+	// here I locating all the web-elements
+	
 	@FindBy(xpath = "//a[normalize-space()='Edit Customer']")
 	@CacheLookup
 	WebElement editcustomer;
@@ -35,7 +37,7 @@ public class EditCustomerPage {
 	WebElement changeSubmit;
 	
 	
-	
+	//I calling these methods from TC_EditCustomerTest_004.java class by creating the object of this class "EditCustomerPage".
 	public void ClickEditCus() {
 		editcustomer.click();
 	}

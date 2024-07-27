@@ -7,6 +7,12 @@ import java.util.Properties;
 public class ReadConfig {
 	
 	Properties pro;
+	
+	/*
+	 * Reading all the information given in "./Configuration/config.properties"
+	 * File. By doing this we don't need to change the information everywhere if
+	 * values need to be changed.
+	 */
 	public ReadConfig() {
 		File src = new File("./Configuration/config.properties");
 		
@@ -18,7 +24,7 @@ public class ReadConfig {
 			System.out.println("Exception is:" + e.getMessage());
 		}
 	}
-	
+	// These methods getting all the values.
 	public String getApplicationURL() {
 		String url = pro.getProperty("baseURL");
 		return url;

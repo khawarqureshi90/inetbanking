@@ -19,7 +19,8 @@ public class LoginPage {
 		PageFactory.initElements(rdriver, this);
 
 	}
-
+	
+	// here I locating all the web-elements
 	@FindBy(name = "uid")
 	@CacheLookup
 	WebElement txtUserName;
@@ -40,6 +41,7 @@ public class LoginPage {
 //	WebElement txtPassword = ldriver.findElement(By.name("password"));
 //	WebElement btnLogin = ldriver.findElement(By.name("btnLogin"));
 
+	//I calling these methods from TC_LoginTest_001.java class by creating the object of this class "LoginPage".
 	public void setUserName(String uname) {
 		txtUserName.sendKeys(uname);
 	}

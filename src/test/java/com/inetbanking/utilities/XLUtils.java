@@ -19,6 +19,12 @@ public class XLUtils {
 	public static XSSFRow row;
 	public static XSSFCell cell;
 	
+	/*
+	 * all these methods are counting the rows and columns and fetching the
+	 * information from the excel sheet called "LoginData.xlsx" in Data-Driven
+	 * test-case. These information are used for the testcase of "TC_LoginDDT_002.java".
+	 */
+	
 	public static int getRowCount (String xlfile, String xlsheet) throws IOException
 	{
 		fi = new FileInputStream(xlfile);
